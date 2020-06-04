@@ -1,5 +1,5 @@
-import 'package:componentes/src/providers/menu_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:componentes/src/providers/menu_provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
     // });
     return FutureBuilder(
       future: menuProvider.cargarData(),
-      // initialData: InitialData,
+       initialData: [],
       builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
     
         
@@ -42,7 +42,6 @@ class HomePage extends StatelessWidget {
         leading: Icon(Icons.person, color: Colors.blue,),
         trailing: Icon(Icons.arrow_forward_ios, color: Colors.blue,),
         onTap: (){
-
           Navigator.pushNamed(context, opt['ruta']);
         },
       );
