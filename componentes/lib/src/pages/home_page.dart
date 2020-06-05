@@ -1,3 +1,4 @@
+import 'package:componentes/src/utils/icon_string_util.dart';
 import 'package:flutter/material.dart';
 import 'package:componentes/src/providers/menu_provider.dart';
 
@@ -39,7 +40,7 @@ class HomePage extends StatelessWidget {
     data.forEach((opt) { 
       final widgetTemp = ListTile(
         title: Text(opt['texto']),
-        leading: Icon(Icons.person, color: Colors.blue,),
+        leading: getIcon(opt['icon'],),
         trailing: Icon(Icons.arrow_forward_ios, color: Colors.blue,),
         onTap: (){
           Navigator.pushNamed(context, opt['ruta']);

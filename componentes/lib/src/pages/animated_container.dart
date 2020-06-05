@@ -9,8 +9,8 @@ class AnimatedContainerPage extends StatefulWidget {
 }
 
 class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
-  double _width = 100.0;
-  double _height = 100.0;
+  double _width = 400.0;
+  double _height = 400.0;
   Color _color = Colors.pink;
 
   BorderRadiusGeometry _borderRadius = BorderRadius.circular(8.0);
@@ -44,8 +44,8 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
     
 
     setState(() {
-     _width = random.nextInt(300).toDouble();
-    _height = random.nextInt(300).toDouble();
+     _width = random.nextInt(400).toDouble();
+    _height = random.nextInt(400).toDouble();
     _borderRadius = BorderRadius.circular(random.nextInt(100).toDouble());
     _color = Color.fromRGBO(
       random.nextInt(255),
