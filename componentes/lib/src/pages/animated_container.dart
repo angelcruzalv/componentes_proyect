@@ -9,8 +9,8 @@ class AnimatedContainerPage extends StatefulWidget {
 }
 
 class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
-  double _width = 400.0;
-  double _height = 400.0;
+  double _width = 50.0;
+  double _height = 50.0;
   Color _color = Colors.pink;
 
   BorderRadiusGeometry _borderRadius = BorderRadius.circular(8.0);
@@ -21,16 +21,33 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
       appBar: AppBar(
         title: Text('Animated Container Page'),
       ),
-      body: Center(
-        
-          child: AnimatedContainer(
-            duration: Duration(milliseconds: 800),
-            curve: Curves.ease,
-            width: _width,
-            height: _height,
-            decoration:
-                BoxDecoration(borderRadius: _borderRadius, color: _color),
-          ),      
+      body: Column(
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 100),
+            padding: EdgeInsets.symmetric(horizontal: 200),
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: 800),
+                curve: Curves.ease,
+                width: _width,
+                height: _height,
+                decoration:
+                    BoxDecoration(borderRadius: _borderRadius, color: _color),
+              ),      
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 50),
+            padding: EdgeInsets.symmetric(horizontal: 50),
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: 800),
+                curve: Curves.ease,
+                width: _width,
+                height: _height,
+                decoration:
+                    BoxDecoration(borderRadius: _borderRadius, color: _color),
+              ),      
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.play_arrow),
@@ -44,8 +61,8 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
     
 
     setState(() {
-     _width = random.nextInt(400).toDouble();
-    _height = random.nextInt(400).toDouble();
+     _width = random.nextInt(150).toDouble();
+    _height = random.nextInt(150).toDouble();
     _borderRadius = BorderRadius.circular(random.nextInt(100).toDouble());
     _color = Color.fromRGBO(
       random.nextInt(255),
